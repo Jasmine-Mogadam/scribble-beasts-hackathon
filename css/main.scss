@@ -1,0 +1,313 @@
+.title-screen {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+img.title-img {
+  display: block;
+  height: 35%;
+  margin: auto;
+}
+
+.title-screen form {
+  height: 65%;
+}
+
+.submit-buttons {
+  margin-top: 50px;
+}
+
+.error-msg {
+  color: red;
+  height: 0;
+}
+
+.hide {
+  display: none;
+}
+
+.socket-disconnected {
+  background-color: orangered;
+  margin: 10%;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  position: fixed;
+  width: 80%;
+  text-align: center;
+}
+
+.header-logo-container img {
+  float: left;
+  width: 100%;
+}
+
+.header-logo-container {
+  width: 20%;
+  max-height: 150px;
+}
+
+.name-header {
+  background-color: #2185d0; /* Sets the background color to blue */
+  display: flex; /* Uses Flexbox to align children horizontally */
+  align-items: center; /* Aligns children vertically in the center */
+  padding: 20px; /* Adds some padding around the content */
+}
+
+/* Ensures that the logo, name, room code, and timer are displayed inline and spaced out */
+.header-logo-container,
+.name,
+.roomCode,
+.timer {
+  margin-right: 50px; /* Adds some space between each element */
+  color: white;
+  font-size: 200%;
+}
+
+/* Removes margin from the last element to prevent extra space on the right */
+.timer {
+  margin-right: 0;
+}
+
+.instructions {
+  text-align: center;
+  margin: 20px;
+}
+
+.waitlist {
+  margin: 50px;
+}
+
+.vip-start-button {
+  margin: 20%;
+}
+
+.drawing-canvas {
+  width: 500px;
+  height: 200px;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+/* from https://codepen.io/stack-findover/pen/OJRvPQv*/
+* {
+  padding: 0;
+  margin: 0;
+  color: #1a1f36;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Ubuntu, sans-serif;
+}
+body {
+  min-height: 100%;
+  background-color: #ffffff;
+}
+form {
+  max-width: 500px;
+  margin: auto;
+}
+h1 {
+  letter-spacing: -1px;
+}
+a {
+  color: #5469d4;
+  text-decoration: unset;
+}
+.flex-flex {
+  display: flex;
+}
+.align-center {
+  align-items: center;
+}
+.center-center {
+  align-items: center;
+  justify-content: center;
+}
+.padding-top--64 {
+  padding-top: 64px;
+}
+.padding-top--24 {
+  padding-top: 24px;
+}
+.padding-top--48 {
+  padding-top: 48px;
+}
+.padding-bottom--24 {
+  padding-bottom: 24px;
+}
+.padding-bottom--48 {
+  padding-bottom: 48px;
+}
+.padding-horizontal--48 {
+  padding: 48px;
+}
+.padding-bottom--15 {
+  padding-bottom: 15px;
+}
+.flex-justifyContent--center {
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+span {
+  display: block;
+  font-size: 20px;
+  line-height: 28px;
+  color: #1a1f36;
+}
+label {
+  position: relative;
+  bottom: 5px;
+  margin-bottom: 10px;
+}
+.field input,
+button {
+  font-size: 16px;
+  line-height: 28px;
+  padding: 8px 16px;
+  width: 100%;
+  min-height: 44px;
+  border: unset;
+  border-radius: 4px;
+  outline-color: rgb(84 105 212 / 0.5);
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(60, 66, 87, 0.16) 0px 0px 0px 1px,
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+}
+input[type="submit"],
+button {
+  background-color: rgb(84, 105, 212);
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgb(84, 105, 212) 0px 0px 0px 1px,
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+/* from https://codepen.io/wildbeard/pen/eZZPZr*/
+//@import url(https://fonts.googleapis.com/css?family=Lato:400,300);
+
+$colors: (
+  red: #db2828,
+  orange: #f2711c,
+  yellow: #fbbd08,
+  olive: #b5cc18,
+  green: #21ba45,
+  teal: #00b5ad,
+  blue: #2185d0,
+  violet: #6435c9,
+  purple: #a333c8,
+  pink: #e03997,
+);
+
+.color-options {
+  box-sizing: border-box;
+}
+
+/*
+body {
+  position: absolute;
+  top: 35%;
+  left: 35%;
+  transform: translate(-35%, -35%);
+  font-family: "lato";
+  color: #333;
+}*/
+
+.color-options input[type="radio"] {
+  display: none;
+  &:checked + label {
+    span {
+      transform: scale(1.25);
+    }
+    @each $name, $value in $colors {
+      .#{$name} {
+        border: 2px solid darken($value, 25%);
+      }
+    } // !@each
+  } // !&:checked + label
+}
+
+.color-options label {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  cursor: pointer;
+  &:hover {
+    span {
+      transform: scale(1.25);
+    }
+  }
+  .color-options span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.2s ease-in-out;
+    @each $name, $value in $colors {
+      &.#{$name} {
+        background: $value;
+      }
+    }
+  }
+}
+
+/* from https://codepen.io/michellebarker/pen/jOzOqNg */
+.waitlist * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Gloria Hallelujah", cursive;
+  font-size: 1.4rem;
+  background: whitesmoke;
+  margin: 0;
+  display: grid;
+}
+
+ul {
+  list-style-position: inside;
+  width: 600px;
+  max-width: 100%;
+  background: white;
+  box-shadow: 0.25rem 0.25rem 0.75rem rgb(0 0 0 / 0.15);
+  padding: 0;
+  margin: 0;
+  border-radius: 0.1rem;
+}
+
+li {
+  padding: 0 0 0 1rem;
+}
+
+li:not(:last-child) {
+  border-bottom: 1px solid lightblue;
+}
+
+li:first-child {
+  margin-top: 1rem;
+}
+
+li:last-child {
+  margin-bottom: 1rem;
+}
+
+::marker {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xml:space='preserve' width='14' viewBox='0 0 50 50'%3E%3Cpath d='M46.4 16.2c-2.3-2.3-5.4-3.5-8.4-4.5-.5-.2-1.1-.3-1.6-.5-1.6-1.6-3.7-2.8-6.2-3.2-1-.2-1.9.1-2.5.6-.9-.3-1.8-.6-2.7-.8-3.2-1-6.4-1.8-9.5-.1-1 .5-1.9 1.2-2.7 2-6.4 1.4-11.7 5-12.4 12.7C0 27 1.9 31.5 4.9 34.9c.1.6.2 1.1.4 1.7 1 3.2 3.3 5.7 6.7 6.5 2.7.6 5.4-.2 7.9-1.2 3.3.4 6.7.3 9.9 0 6.5-.7 13.3-2.8 17.1-8.5 3.6-5.2 4-12.6-.5-17.2zm-17.3.9c2.1.4 4 1.7 4.7 3.8 0 .5-.1 1.1-.2 1.6-.3 1.4-.8 2.6-1.6 3.7-.7.2-1.5.1-2.3-.4-.8-.4-1.6-1-2.2-1.6-.4-.4-1.2-1.7-1.6-1.9 3.4 1.3 5.1-3 3.2-5.2zm-11.6 9.7c.2-1.9 1.1-3.9 2.3-5.5-.4 2.1.3 4.2 1.7 6 1.3 1.7 3.1 3.2 5 4.2-.2.1-.4.2-.6.4-.1 0-.1.1-.2.1-3.9.2-8.7-.8-8.2-5.2zm-6.4 3.1c.1.3.1.7.2 1 .2.6.4 1.2.7 1.8-.4-.2-.7-.5-1-.7.1-.8.1-1.4.1-2.1zm31.2-1.3c-.9 1.7-2.1 3.1-3.7 4.1 2-2.1 3.4-4.7 4-7.6.2-.7.3-1.4.3-2.1.6 1.5.5 3.3-.6 5.6z'/%3E%3C/svg%3E")
+    " ";
+}
+
+li:nth-child(3n)::marker {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xml:space='preserve' width='14' viewBox='0 0 50 50'%3E%3Cpath d='M46.5 12.5c-.4-1.1-1.3-1.8-2.2-2-4.2-4-11.6-4.3-17.1-4.1-6.9.3-13.9 2.1-19.4 6.5C2 17.5-2.4 25.7 2.5 32.6c2.2 3.2 5.5 4.9 9 5.5 3.3 1.7 6.7 3.3 10.2 4.4 7.8 2.3 17 1.6 23.2-4.3 7.3-7 4.8-17.3 1.6-25.7zm-20.2 2.7c.6 0 1.3 0 1.8.2 1.1.4 1.7 1.3 2 2.3-1-1.2-2.4-2.1-3.8-2.5zm-1.4 6.6c.9.9 1.3 2.2-.2 2.3-2 .2-1.1-1.9.2-2.3zm-11.8 9.8c-.6-.3-2.9-1.1-3.2-1.8-.2-.5 1.4-3.1 2.1-4.2.3.5.7 1 1.2 1.4 0 .3.1.6.2.8.5 1.9 1.5 3.1 2.9 4h-.2c-.8.1-1.6.1-2.5-.1-.2 0-.3 0-.5-.1zM24 36.4c1.6-.7 3-1.5 4.3-2.5.8.2 1.7.3 2.5.5 2.5.4 5.2.9 7.7.6-.9.6-2 1.1-3 1.4-3.9 1.3-7.7 1-11.5 0z'/%3E%3C/svg%3E")
+    " ";
+}
+
+li:nth-child(3n - 1)::marker {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xml:space='preserve' width='14' viewBox='0 0 50 50'%3E%3Cpath d='M48.3 23.7c-1-9.9-9.9-15.6-18.8-17.8-8.2-2.1-18.8-2.6-24.6 4.8C.6 16.2 1 23.6 4.3 29.3c-.5 1-.8 2-1 3-.6 4 2 7.6 5.1 10 5.9 4.4 14 4.2 19.6-.4 1.5 0 2.9-.2 4.4-.5 1.8 0 3.5 0 5.3-.1 2.3-.1 3.5-1.9 3.5-3.7 4.5-3.3 7.7-8.2 7.1-13.9zM9.1 17.8c1.1-4.1 4.9-5.8 8.8-6.1.9-.1 1.9-.1 2.9-.1-3.2 1.6-6.3 4.6-8 7.4-.1.1-.1.2-.2.3-1.1.9-2.1 1.9-3 2.9-.2.2-.4.4-.5.6-.4-1.7-.5-3.3 0-5z'/%3E%3C/svg%3E")
+    " ";
+}

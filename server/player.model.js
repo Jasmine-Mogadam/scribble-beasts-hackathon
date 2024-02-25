@@ -1,18 +1,14 @@
-export class Player{
-    name = null
-    currentImage = null
-    clientSocket = null
-    
-    constructor(name, clientSocket){
-        this.name = name;
-        this.clientSocket = clientSocket;
-    }
+export class Player {
+  name = null;
+  currentImage = null;
+  clientSocket = null;
 
-    sendImage(imageJsonString){
-        this.clientSocket.send(imageJsonString)
-    }
+  constructor(name, clientSocket) {
+    this.name = name;
+    this.clientSocket = clientSocket;
+  }
 
-    setCurrentImage(imageJsonString){
-        currentImage = imageJsonString;
-    }
+  sendImage(imageJsonString) {
+    this.clientSocket.send(imageJsonString);
+  }
 }

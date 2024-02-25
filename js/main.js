@@ -1,32 +1,40 @@
-import { handleCreateJoinSubmit } from "./gameForm.js";
-import {socket} from "./websocket.js"
+import { handleCreateJoinSubmit } from "./titleScreen.js";
+import { handleGame } from "./game.js";
+import { socket } from "./websocket.js";
+import { currentPlayer } from "./currentPlayer.js";
 
-window.onload = function() {
-    // Add event listener to the form
-    document.getElementById("game-start-join").addEventListener("submit", handleCreateJoinSubmit);
-    
-  // Handle any errors that occur.
-  socket.onerror = function(error) {
-    console.log('WebSocket Error: ' + error);
-  };
+window.onload = function () {
+  document
+    .getElementById("game-start-join")
+    .addEventListener("submit", handleCreateJoinSubmit);
 
-  // Show a connected message when the WebSocket is opened.
-  socket.onopen = function(event) {
-    //socketStatus.innerHTML = 'Connected to: ' + event.currentTarget.url;
-    //socketStatus.className = 'open';
-  };
+  document
+    .getElementById("start-game-button")
+    .addEventListener("click", handleGame);
+};
 
-  // Handle messages sent by the server.
-  socket.onmessage = function(event) {
-    var data = JSON.parse(event.data);
-    console.log(data);
-    //messagesList.innerHTML += '<li class="received"><span>Received:</span>' + message + '</li>';
-  };
+// Handle any errors that occur.
+socket.onerror = function (error) {
+  console.log("WebSocket Error: " + error);
+};
 
-  // Show a disconnected message when the WebSocket is closed.
-  socket.onclose = function(event) {
-    //socketStatus.innerHTML = 'Disconnected from WebSocket.';
-    //socketStatus.className = 'closed';
-  };
-}
+// Handle messages sent by the server.
+socket.onmessage = function (event) {
+  let data = "bad message";
+  try {
+    data = JSON.parse(event.data);
+  } catch {
+    data = event.data;
+  }
+  if (data === "start game" && !currentPlayer.inGame) {
+    handleGame();
+  }
+  console.log(data);
+};
 
+// Show a disconnected message when the WebSocket is closed.
+socket.onclose = function (event) {
+  socketErrorEle = document
+    .getElementById("socket-disconnected")
+    .classList.remove("hide");
+};

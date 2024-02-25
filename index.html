@@ -1,33 +1,145 @@
 <html>
-    <head>
-        <title>Scribble Beasts</title>
-        <script src="js/main.js" type="module"></script>
-        <link rel="stylesheet" href="css/main.css">
-    </head>
-    <body>
-        <div class="title-screen">
-            <img class="title-img" src="/img/SBTitle.png">
-            <form id="game-start-join">
-                <div class="field padding-bottom--48">
-                  <label for="room-code">Room Code</label>
-                  <input type="text" name="room-code">
-                  <div class="error-msg" id="room-code-error"></div>
-                </div>
-                <div class="field padding-bottom--48">
-                  <label for="name">Name</label>
-                  <input type="text" name="name">
-                  <div class="error-msg" id="name-error"></div>
-                </div>
-                <div class="submit-buttons">
-                  <div class="field padding-bottom--24">
-                    <input type="submit" name="join-game" value="Join Game" id="join-game-submit">
-                  </div>
-                  <div class="field padding-bottom--24">
-                    <input type="submit" name="start-game" value="Create Game" id="create-game-submit">
-                  </div>
-                </div>
-              </form>
+  <head>
+    <title>Scribble Beasts</title>
+    <script src="js/main.js" type="module"></script>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="socket-disconnected hide" id="socket-disconnected">
+      Disconnected from server, please refresh.<br /><br />If this issue
+      persists contact the server admin.
+    </div>
+    <!------------------>
+    <!-- Title Screen -->
+    <!------------------>
+    <div class="title-screen" id="title-screen">
+      <img class="title-img" src="/img/SBTitle.png" />
+      <form id="game-start-join">
+        <div class="field padding-bottom--48">
+          <label for="room-code">Room Code</label>
+          <input
+            type="text"
+            name="room-code"
+            style="text-transform: uppercase"
+            oninput="this.value = this.value.toUpperCase()"
+          />
+          <div class="error-msg" id="room-code-error"></div>
         </div>
+        <div class="field padding-bottom--48">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            style="text-transform: uppercase"
+            oninput="this.value = this.value.toUpperCase()"
+          />
+          <div class="error-msg" id="name-error"></div>
+        </div>
+        <div class="submit-buttons">
+          <div class="field padding-bottom--24">
+            <input
+              type="submit"
+              name="join-game"
+              value="Join Game"
+              id="join-game-submit"
+            />
+          </div>
+          <div class="field padding-bottom--24">
+            <input
+              type="submit"
+              name="start-game"
+              value="Create Game"
+              id="create-game-submit"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
 
-    </body>
+    <!-------------------->
+    <!-- Game Screens -->
+    <!-------------------->
+    <div class="in-game hide" id="in-game">
+      <div class="name-header" id="name-header">
+        <div class="header-logo-container" id="header-logo-container">
+          <img src="/img/SBTitle.png" id="header-logo" />
+        </div>
+        <div class="name" id="name"></div>
+        <div class="timer" id="timer"></div>
+        <div class="roomCode" id="roomCode"></div>
+      </div>
+      <div class="instructions" id="instructions"></div>
+      <div class="game-body" id="game-body">
+        <!-------------------->
+        <!-- Waiting Screen -->
+        <!-------------------->
+        <div class="waiting-screen hide" id="waiting-screen">
+          <div class="waitlist" id="waitlist">
+            <div>Players:</div>
+            <ul></ul>
+          </div>
+          <div class="vip-start-button hide" id="vip-start-button">
+            <button class="start-game-button" id="start-game-button">
+              Start Game
+            </button>
+          </div>
+        </div>
+        <!------------------------------>
+        <!-- Round 1 Screen: Scribble -->
+        <!------------------------------>
+        <div class="round-1-screen hide" id="round-1-screen">
+          <div class="canvas-container" id="scribble-canvas-container">
+            <canvas class="drawing-canvas" id="scribble"></canvas>
+          </div>
+        </div>
+        <!-------------------------->
+        <!-- Round 2 Screen: Line -->
+        <!-------------------------->
+        <div class="round-2-screen hide" id="round-2-screen">
+          <div class="canvas-container scribble" id="line-canvas-container">
+            <canvas class="drawing-canvas" id="line"></canvas>
+          </div>
+        </div>
+        <!--------------------------->
+        <!-- Round 3 Screen: Color -->
+        <!--------------------------->
+        <div class="round-3-screen hide" id="round-3-screen">
+          <div class="canvas-container line" id="color-canvas-container">
+            <canvas class="drawing-canvas" id="color"></canvas>
+          </div>
+          <div class="color-options" id="colorRadio">
+            <input type="radio" name="color" id="red" value="red" />
+            <label for="red"><span class="red"></span></label>
+
+            <input type="radio" name="color" id="green" />
+            <label for="green"><span class="green"></span></label>
+
+            <input type="radio" name="color" id="yellow" />
+            <label for="yellow"><span class="yellow"></span></label>
+
+            <input type="radio" name="color" id="olive" />
+            <label for="olive"><span class="olive"></span></label>
+
+            <input type="radio" name="color" id="orange" />
+            <label for="orange"><span class="orange"></span></label>
+
+            <input type="radio" name="color" id="teal" />
+            <label for="teal"><span class="teal"></span></label>
+
+            <input type="radio" name="color" id="blue" />
+            <label for="blue"><span class="blue"></span></label>
+
+            <input type="radio" name="color" id="violet" />
+            <label for="violet"><span class="violet"></span></label>
+
+            <input type="radio" name="color" id="purple" />
+            <label for="purple"><span class="purple"></span></label>
+
+            <input type="radio" name="color" id="pink" />
+            <label for="pink"><span class="pink"></span></label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
