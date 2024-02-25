@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Scribble Beasts</title>
+        <script src="js/main.js" type="module"></script>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <div class="title-screen">
+            <img class="title-img" src="/img/SBTitle.png">
+            <form id="game-start-join">
+                <div class="field padding-bottom--48">
+                  <label for="room-code">Room Code</label>
+                  <input type="text" name="room-code">
+                  <div class="error-msg" id="room-code-error"></div>
+                </div>
+                <div class="field padding-bottom--48">
+                  <label for="name">Name</label>
+                  <input type="text" name="name">
+                  <div class="error-msg" id="name-error"></div>
+                </div>
+                <div class="submit-buttons">
+                  <div class="field padding-bottom--24">
+                    <input type="submit" name="join-game" value="Join Game" id="join-game-submit">
+                  </div>
+                  <div class="field padding-bottom--24">
+                    <input type="submit" name="start-game" value="Create Game" id="create-game-submit">
+                  </div>
+                </div>
+              </form>
+        </div>
+
+    </body>
+</html>
